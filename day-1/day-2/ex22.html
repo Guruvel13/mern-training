@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of 5 Inputs</title>
+</head>
+<body>
+    <h2>Enter 5 Numbers:</h2> 
+    <input type="number" id="num1"><br>
+    <input type="number" id="num2"><br>
+    <input type="number" id="num3"><br>
+    <input type="number" id="num4"><br>
+    <input type="number" id="num5"><br>
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateSum() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var num3 = parseFloat(document.getElementById('num3').value);
+            var num4 = parseFloat(document.getElementById('num4').value);
+            var num5 = parseFloat(document.getElementById('num5').value);
+            var sum = num1 + num2 + num3 + num4 + num5;
+            document.getElementById('result').innerText = "Sum: " + sum;
+            console.log("Sum of the numbers is: " + sum);
+        }
+    </script>
+</body>
+</html>

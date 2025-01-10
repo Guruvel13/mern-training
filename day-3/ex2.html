@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <script>
+        var tags = document.getElementsByTagName('p');
+        var sum = 0;
+        for (let i = 0; i < tags.length; i++) {
+            sum += Number(tags[i].innerHTML);
+        }
+        document.write(sum);
+        console.log(sum);
+    </script>
+</body>
+</html>

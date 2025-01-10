@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            border: 2px solid #dee2e6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            width: 60%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>          
+<body>
+    <div class="container">
+        <h3>User Table</h3>
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Links</th>
+            </tr>
+            <tr>
+                <td>User 1</td>
+                <td><a href="form1.html">User 1</a></td>
+            </tr>
+            <tr>
+                <td>User 2</td>
+                <td><a href="form2.html">User 2</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

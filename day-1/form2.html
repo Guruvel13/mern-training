@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Form</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0f7fa; 
+        }
+        .form-container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-top: 20px; 
+        }
+        label {
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="submit"], input[type="reset"], button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Login</h3>
+        <form id="loginForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Enter Your Name">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter Your Password">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter Your Email" pattern=".@." title="Email must contain the @ symbol">
+
+            <div class="button-row">
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+                <button type="button" onclick="window.location.href='ex1.html'">Return to Home</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = function(event) {
+            event.preventDefault(); 
+            window.location.href = 'submit.html'; 
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            background-color: #f8f9fa; 
+        
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid rgb(221, 221, 221);
+        }    
+    </style>
+</head>
+<body>
+    <h1>Array</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+        </tbody>
+    </table>
+    <script>
+        var a = [
+            {name: "Arun", age: 25},
+            {name: "Arul", age: 30},
+            {name: "Ajay", age: 28},
+            {name: "Bala", age: 25}
+        ];
+        const tableBody = document.getElementById('table-body');
+        a.forEach((person) => {
+            const row = tableBody.insertRow(); 
+            const nameCell = row.insertCell(0);
+            nameCell.textContent = person.name; 
+            const ageCell = row.insertCell(1);
+            ageCell.textContent = person.age;
+        });
+        console.log(a);
+    </script>
+</body>
+</html>

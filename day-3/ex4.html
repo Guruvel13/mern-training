@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>CGPA</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="table2-body"></tbody>
+    </table>
+    <script>
+        var std = [
+            {name: "arun", age: "19", cgpa: "7.8", dept: "cse"},
+            {name: "arul", age: "20", cgpa: "8.8", dept: "ece"},
+            {name: "ajay", age: "19", cgpa: "8.6", dept: "it"},
+            {name: "bala", age: "20", cgpa: "7.7", dept: "cse"}
+        ];
+
+        var tableBody = document.getElementById('table-body');
+        std.forEach((student) => {
+            var row = tableBody.insertRow();
+            var nameCell = row.insertCell(0);
+            nameCell.textContent = student.name;
+            var ageCell = row.insertCell(1);
+            ageCell.textContent = student.age;
+            var cgpaCell = row.insertCell(2);
+            cgpaCell.textContent = student.cgpa;
+            var deptCell = row.insertCell(3);
+            deptCell.textContent = student.dept;
+        });
+
+        var grade = std.map(l => {
+            var cgpa = parseFloat(l.cgpa);
+            if (cgpa >= 9) {
+                return 'O';
+            } else if (cgpa >= 8) {
+                return 'A';
+            } else if (cgpa >= 7) {
+                return 'B';
+            } else if (cgpa >= 6) {
+                return 'C';
+            } else {
+                return 'F';
+            }
+        });
+        var result = std.map((student, index) => {
+            return { name: student.name, grade: grade[index] };
+        });
+
+        result.sort((a, b) => a.grade.localeCompare(b.grade));
+        var table2Body = document.getElementById('table2-body');
+        result.forEach((student) => {
+            var row = table2Body.insertRow();
+            var nameCell = row.insertCell(0);
+            nameCell.textContent = student.name;
+            var gradeCell = row.insertCell(1);
+            gradeCell.textContent = student.grade;
+        });
+    </script>
+</body>
+</html>
