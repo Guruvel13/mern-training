@@ -5,6 +5,8 @@ const Contact = () => {
             <h2>This is Contact page</h2>
             <h3>Value is {num}</h3>
             <button onClick={()=>a(num+1)}>+</button>
+            <button onClick={()=>a(num-1)}>-</button>
+            <button onClick={()=>a(0)}>Reset</button>
             </div>);
 };
 export default Contact;
