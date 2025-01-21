@@ -1,4 +1,4 @@
-import { useState } from "react";   //importing useState from react
+import { useState } from "react";   
 const About = () => {
     var [text,setText] = useState("Text box");
     function handleText(event){
