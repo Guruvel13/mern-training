@@ -9,7 +9,8 @@ import Signup from './components/functional_comp/Signup'
 import Login from './components/functional_comp/Login'
 import UseState from './components/functional_comp/Hooks/UseState'
 import UseEffect from './components/functional_comp/Hooks/UseEffect'
-
+import UseEffectAPI from './components/functional_comp/Hooks/UseEffectAPI'
+import UseAPI from './components/functional_comp/Hooks/useapi'
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,8 @@ function App() {
         <Route path="/" element={<Login />}></Route>
         <Route path='/usestate' element={<UseState/>}></Route>
         <Route path="/useEffect" element={<UseEffect/>}></Route>
+        <Route path='/useEffectapi' element={<UseEffectAPI/>}></Route>
+        <Route path='/useapi' element={<UseAPI/>}></Route>
       </Routes>
     </BrowserRouter>
   );
