@@ -6,6 +6,7 @@ import Contact from './components/functional_comp/Contact'
 import Navbar from './components/functional_comp/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Signup from './components/functional_comp/Signup'
+import Login from './components/functional_comp/Login'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/gallery' element={<Gallery page="Gallery" img="SECE logo"/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path="/sign-up" element={<Signup/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>
   );
