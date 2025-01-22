@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import '../../CSS/Login.css';
 
 const Login = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        window.location.href = "/home";
+    };
   return (
     <div className="form-container">
       <h2>Login</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="login-email">Email:</label>
         <input type="email" id="login-email" name="login-email" required />
 
