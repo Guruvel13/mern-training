@@ -12,6 +12,11 @@ import UseEffect from './components/functional_comp/Hooks/UseEffect'
 import UseEffectAPI from './components/functional_comp/Hooks/UseEffectAPI'
 import UseAPI from './components/functional_comp/Hooks/useapi'
 import UseAPIIMG from './components/functional_comp/Hooks/UseAPIIMG'
+import UseReducer from './components/functional_comp/Hooks/UseReducer'
+import UseRef from './components/functional_comp/Hooks/UseRef'
+import UseMemo from './components/functional_comp/Hooks/UseMemo'
+import UseCallback from './components/functional_comp/Hooks/UseCallback'
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,7 +33,11 @@ function App() {
         <Route path="/useEffect" element={<UseEffect/>}></Route>
         <Route path='/useEffectapi' element={<UseEffectAPI/>}></Route>
         <Route path='/useapi' element={<UseAPI/>}></Route>
+        <Route path='/usereducer' element={<UseReducer/>}></Route>
         <Route path="/useimg" element={<UseAPIIMG/>}></Route>
+        <Route path='/useref' element={<UseRef/>}></Route>
+        <Route path='/usememo' element={<UseMemo/>}></Route>
+        <Route path='/usecallback' element={<UseCallback/>}></Route>
       </Routes>
     </BrowserRouter>
   );

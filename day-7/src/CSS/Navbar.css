@@ -1,4 +1,4 @@
-ol{
+ol {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
@@ -8,14 +8,27 @@ ol{
     color: lightgreen;
 }
 
-.link{
+.link {
     text-decoration: none;
     padding: 3px;
     color: lightgreen;
+    text-align: center;
 }
 
-.link:hover{
+.link:hover {
     color: rgb(255, 0, 0); /* Changed hover color to red */
     background-color: rgb(0, 128, 128);
     border-radius: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(34, 34, 34);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
