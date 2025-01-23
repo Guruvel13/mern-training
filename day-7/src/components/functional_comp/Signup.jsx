@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../CSS/signup.css';
-
+import './../../CSS/Signup.css';
 const Signup = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
