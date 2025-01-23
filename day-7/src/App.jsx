@@ -1,10 +1,10 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from "./components/functional_comp/Home"
 import About from './components/functional_comp/About'
 import Gallery from './components/functional_comp/Gallery'
 import Contact from './components/functional_comp/Contact'
 import Navbar from './components/functional_comp/Navbar'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Signup from './components/functional_comp/Signup'
 import Login from './components/functional_comp/Login'
 import UseState from './components/functional_comp/Hooks/UseState'
