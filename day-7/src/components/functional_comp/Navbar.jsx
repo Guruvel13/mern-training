@@ -22,6 +22,7 @@ const Navbar = () => {
                     <li><Link to="/sign-up" className='link'>Sign-up</Link></li>
                     <li><Link to="/useState" className='link'>useState</Link></li>
                     <li><Link to="/useEffect" className='link'>useEffect</Link></li>
+                    <li><Link to="/useimg" className="link">useAPIimg</Link></li>
                     <li><Link to="/useEffectapi" className='link'>UseEffectAPI</Link></li>
                     <li><Link to="/useapi" className='link'>UseAPI</Link></li>
                     <div>
