@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../CSS/Login.css';
+import './../../CSS/Login.css';
 
 const Login = () => {
     const handleSubmit = (event) => {
