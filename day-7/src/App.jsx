@@ -10,7 +10,7 @@ import Login from './components/functional_comp/Login'
 import UseState from './components/functional_comp/Hooks/UseState'
 import UseEffect from './components/functional_comp/Hooks/UseEffect'
 import UseEffectAPI from './components/functional_comp/Hooks/UseEffectAPI'
-import UseAPI from './components/functional_comp/Hooks/useapi'
+import UseAPI from './components/functional_comp/Hooks/UseAPI'
 import UseAPIIMG from './components/functional_comp/Hooks/UseAPIIMG'
 import UseReducer from './components/functional_comp/Hooks/UseReducer'
 import UseRef from './components/functional_comp/Hooks/UseRef'
@@ -27,7 +27,7 @@ function App() {
         <Route path='/gallery' element={<Gallery page="Gallery" img="SECE logo" />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path="/sign-up" element={<Signup />}></Route>
-        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/" element={<Login />}></Route>
         <Route path='/usestate' element={<UseState/>}></Route>
         <Route path="/useEffect" element={<UseEffect/>}></Route>
