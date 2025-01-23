@@ -45,7 +45,7 @@
   
   /* Button styling */
   .signup-button {
-    background-color: #4caf50;
+    background-color: #4a00c1;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -57,7 +57,7 @@
   }
   
   .signup-button:hover {
-    background-color: #45a049;
+    background-color: #5345a0;
   }
   
   /* Link styling */
