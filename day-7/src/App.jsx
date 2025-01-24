@@ -16,6 +16,7 @@ import UseReducer from './components/functional_comp/Hooks/UseReducer'
 import UseRef from './components/functional_comp/Hooks/UseRef'
 import UseMemo from './components/functional_comp/Hooks/UseMemo'
 import UseCallback from './components/functional_comp/Hooks/UseCallback'
+import ReactLifecycleMethods from './components/class_comp/ReactLifecycle'  
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/useref' element={<><Navbar /><UseRef /></>} /> 
         <Route path='/usememo' element={<><Navbar /><UseMemo /></>} /> 
         <Route path='/usecallback' element={<><Navbar /><UseCallback /></>} /> 
+        <Route path='/reactlifecycle' element={<><Navbar/><ReactLifecycleMethods/></>}/>u
       </Routes>
     </BrowserRouter>
   );
