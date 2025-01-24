@@ -1,34 +1,38 @@
 import React from "react";
-
-class ReactLifecycle extends React.Component {
+class ReactLifecycleMethods extends React.Component {
   constructor() {
     super();
-    this.state = { favoriteColor: "red" };
+    this.state = {
+      number: 0,
+    };
   }
-    UpdateNum = () => {
-        console.log("UpdateNum");
-      this.setState({ number: this.state.number + 1 });
-    }
-  componentDidMount() {
-    console.log("Mountunting");
-    setTimeout(() => {
-      this.setState({number: 1}); });
+  updateNum = () => {
+    this.setState({ number: this.state.number + 1 })
   }
-componentDidUpdate(prevProps, prevState) {
-    if (prevState.number !== this.state.number) {
-        console.log("Component did update");
+  componentDidMount(){
+    console.log("Comp Mounted");
+  }
+  componentDidUpdate(prevProps,prevState){
+    if(prevState.number !== this.state.number){
+        console.log("Update Comp",prevState.number, this.state.number);
     }
-}
+  }
+  componentWillUnmount(){
+    console.log("Comp Unmounted");
+    this.setState({number:10000})
+  }
   render() {
-    console.log("Inside Render");
     return (
       <div>
-        {console.log("Inside Render")}
-        <h1> This is React Life cycle Method</h1>
+        <h1>This is React Lifecycle Methods</h1>
         <h2>The state value is {this.state.number}</h2>
-        <button onClick={() => this.setState({ number:this.state.number+1 })}>+</button>
+        <button
+          onClick={this.updateNum}
+        >
+          +
+        </button>
       </div>
     );
   }
 }
-export default ReactLifecycle;
+export default ReactLifecycleMethods;

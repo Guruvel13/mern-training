@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Home from "./components/functional_comp/Home"
 import About from './components/functional_comp/About'
 import Gallery from './components/functional_comp/Gallery'
@@ -15,27 +15,31 @@ import UseAPIIMG from './components/functional_comp/Hooks/UseAPIIMG'
 import UseReducer from './components/functional_comp/Hooks/UseReducer'
 import UseRef from './components/functional_comp/Hooks/UseRef'
 import UseMemo from './components/functional_comp/Hooks/UseMemo'
-import UseCallback from './components/functional_comp/Hooks/UseCallback'
+import UseCallback from './components/functional_comp/UseCallback'
 
 function App() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === '/' || location.pathname === '/sign-up';
+
   return (
     <BrowserRouter>
+      {!hideNavbar && <Navbar />}
       <Routes> 
-        <Route path="/" element={<Login />} /> 
         <Route path="/sign-up" element={<Signup />} /> 
-        <Route path="/home" element={<><Navbar /><Home /></>} /> 
-        <Route path="/about" element={<><Navbar /><About /></>} /> 
-        <Route path="/gallery" element={<><Navbar /><Gallery page="Gallery" img="SECE logo" /></>} /> 
-        <Route path="/contact" element={<><Navbar /><Contact /></>} /> 
-        <Route path='/usestate' element={<><Navbar /><UseState /></>} /> 
-        <Route path="/useEffect" element={<><Navbar /><UseEffect /></>} /> 
-        <Route path='/useEffectapi' element={<><Navbar /><UseEffectAPI /></>} /> 
-        <Route path='/useapi' element={<><Navbar /><UseAPI /></>} /> 
-        <Route path='/usereducer' element={<><Navbar /><UseReducer /></>} /> 
-        <Route path="/useimg" element={<><Navbar /><UseAPIIMG /></>} /> 
-        <Route path='/useref' element={<><Navbar /><UseRef /></>} /> 
-        <Route path='/usememo' element={<><Navbar /><UseMemo /></>} /> 
-        <Route path='/usecallback' element={<><Navbar /><UseCallback /></>} /> 
+        <Route path='/login' element={<Login/>}/>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/about" element={<About />} /> 
+        <Route path="/gallery" element={<Gallery page="Gallery" img="SECE logo" />} /> 
+        <Route path="/contact" element={<Contact />} /> 
+        <Route path='/usestate' element={<UseState />} /> 
+        <Route path="/useEffect" element={<UseEffect />} /> 
+        <Route path='/useEffectapi' element={<UseEffectAPI />} /> 
+        <Route path='/useapi' element={<UseAPI />} /> 
+        <Route path='/usereducer' element={<UseReducer />} /> 
+        <Route path="/useimg" element={<UseAPIIMG />} /> 
+        <Route path='/useref' element={<UseRef />} /> 
+        <Route path='/usememo' element={<UseMemo />} /> 
+        <Route path='/usecallback' element={<UseCallback />} /> 
       </Routes>
     </BrowserRouter>
   );
