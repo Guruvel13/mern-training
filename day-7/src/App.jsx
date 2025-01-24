@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from "./components/functional_comp/Home"
 import About from './components/functional_comp/About'
@@ -17,6 +18,8 @@ import UseRef from './components/functional_comp/Hooks/UseRef'
 import UseMemo from './components/functional_comp/Hooks/UseMemo'
 import UseCallback from './components/functional_comp/Hooks/UseCallback'
 import ReactLifecycleMethods from './components/class_comp/ReactLifecycle'  
+import UseContext from './components/functional_comp/Hooks/UseContext'
+import Memo from './components/functional_comp/Memorization/Memo'
 
 function App() {
   return (
@@ -37,7 +40,9 @@ function App() {
         <Route path='/useref' element={<><Navbar /><UseRef /></>} /> 
         <Route path='/usememo' element={<><Navbar /><UseMemo /></>} /> 
         <Route path='/usecallback' element={<><Navbar /><UseCallback /></>} /> 
-        <Route path='/reactlifecycle' element={<><Navbar/><ReactLifecycleMethods/></>}/>u
+        <Route path='/reactlifecycle' element={<><Navbar/><ReactLifecycleMethods/></>}/>
+        <Route path='/usecontext' element={<><Navbar /><UseContext /></>} /> 
+        <Route path='/memo' element={<><Navbar /><Memo /></>} /> 
       </Routes>
     </BrowserRouter>
   );
