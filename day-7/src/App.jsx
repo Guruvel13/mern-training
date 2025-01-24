@@ -16,7 +16,7 @@ import UseReducer from './components/functional_comp/hooks/UseReducer'
 import UseRef from './components/functional_comp/hooks/UseRef'
 import UseMemo from './components/functional_comp/hooks/UseMemo'
 import UseCallback from './components/functional_comp/hooks/UseCallback'
-import ReactLifecycle from './components/class_comp/ReactLifecycle'
+// import ReactLifecycle from './components/class_comp/ReactLifecycle'
 
 function App() {
   return (
@@ -49,7 +49,7 @@ function AppContent() {
         <Route path='/useref' element={<UseRef/>}></Route>
         <Route path='/usememo' element={<UseMemo/>}></Route>
         <Route path='/usecallback' element={<UseCallback/>}></Route>
-        <Route path='/reactlifecycle' element={<ReactLifecycle/>}></Route>
+        {/* <Route path='/reactlifecycle' element={<ReactLifecycle/>}></Route> */}
       </Routes>
     </>
   );
