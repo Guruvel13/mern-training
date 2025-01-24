@@ -16,27 +16,31 @@ import UseReducer from './components/functional_comp/Hooks/UseReducer'
 import UseRef from './components/functional_comp/Hooks/UseRef'
 import UseMemo from './components/functional_comp/Hooks/UseMemo'
 import UseCallback from './components/functional_comp/Hooks/UseCallback'
+import Reactlm from './components/class_comp/ReactLifecycle'
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes> 
-        <Route path="/" element={<Login />} /> 
-        <Route path="/sign-up" element={<Signup />} /> 
-        <Route path="/home" element={<><Navbar /><Home /></>} /> 
-        <Route path="/about" element={<><Navbar /><About /></>} /> 
-        <Route path="/gallery" element={<><Navbar /><Gallery page="Gallery" img="SECE logo" /></>} /> 
-        <Route path="/contact" element={<><Navbar /><Contact /></>} /> 
-        <Route path='/usestate' element={<><Navbar /><UseState /></>} /> 
-        <Route path="/useEffect" element={<><Navbar /><UseEffect /></>} /> 
-        <Route path='/useEffectapi' element={<><Navbar /><UseEffectAPI /></>} /> 
-        <Route path='/useapi' element={<><Navbar /><UseAPI /></>} /> 
-        <Route path='/usereducer' element={<><Navbar /><UseReducer /></>} /> 
-        <Route path="/useimg" element={<><Navbar /><UseAPIIMG /></>} /> 
-        <Route path='/useref' element={<><Navbar /><UseRef /></>} /> 
-        <Route path='/usememo' element={<><Navbar /><UseMemo /></>} /> 
-        <Route path='/usecallback' element={<><Navbar /><UseCallback /></>} /> 
-      </Routes>
+       <Navbar />
+      <Routes>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/gallery' element={<Gallery page="Gallery" img="SECE logo" />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
+        <Route path="/sign-up" element={<Signup />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Login />}></Route>
+        <Route path='/usestate' element={<UseState/>}></Route>
+        <Route path="/useEffect" element={<UseEffect/>}></Route>
+        <Route path='/useEffectapi' element={<UseEffectAPI/>}></Route>
+        <Route path='/useapi' element={<UseAPI/>}></Route>
+        <Route path='/usereducer' element={<UseReducer/>}></Route>
+        <Route path="/useimg" element={<UseAPIIMG/>}></Route>
+        <Route path='/useref' element={<UseRef/>}></Route>
+        <Route path='/usememo' element={<UseMemo/>}></Route>
+        <Route path='/usecallback' element={<UseCallback/>}></Route>
+        <Route path='/Recatlifecycle' element={<Recatlm/>}></Route>
+      </Routes> 
     </BrowserRouter>
   );
 }
