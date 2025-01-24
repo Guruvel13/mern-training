@@ -4,7 +4,7 @@ import './../../CSS/Signup.css';
 const Signup = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
-        window.location.href = "/home";
+        window.location.href = "/";
     };
 
     return (

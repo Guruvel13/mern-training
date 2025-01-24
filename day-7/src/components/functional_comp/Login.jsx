@@ -5,7 +5,7 @@ import './../../CSS/Login.css';
 const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
-        window.location.href = "/home";
+        window.location.href = "/";
     };
   return (
     <div className="form-container">
