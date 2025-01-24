@@ -17,6 +17,7 @@ class ReactLifecycle extends React.Component {
                     +
                 </button>
             </div>
+            
         );
     }
 }
