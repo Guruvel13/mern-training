@@ -39,7 +39,7 @@ function App() {
         <Route path='/useref' element={<UseRef/>}></Route>
         <Route path='/usememo' element={<UseMemo/>}></Route>
         <Route path='/usecallback' element={<UseCallback/>}></Route>
-        <Route path='/Recatlifecycle' element={<Recatlm/>}></Route>
+        <Route path='/reactlifecycle' element={<Reactlm/>}></Route>
       </Routes> 
     </BrowserRouter>
   );
