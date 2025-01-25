@@ -20,6 +20,9 @@ import UseCallback from './components/functional_comp/Hooks/UseCallback'
 import ReactLifecycleMethods from './components/class_comp/ReactLifecycle'  
 import UseContext from './components/functional_comp/Hooks/UseContext'
 import Memo from './components/functional_comp/Memorization/Memo'
+import Storage from './components/functional_comp/Hooks/Custom_Hook/Sample'
+import Usecust from './components/functional_comp/Hooks/Custom_Hook/UseLocalStorage'
+import HoC from './components/functional_comp/Hoc/HoC'
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
         <Route path='/reactlifecycle' element={<><Navbar/><ReactLifecycleMethods/></>}/>
         <Route path='/usecontext' element={<><Navbar /><UseContext /></>} /> 
         <Route path='/memo' element={<><Navbar /><Memo /></>} /> 
+        <Route path='/storage' element={<><Navbar /><Storage /></>} /> 
+        <Route path='/usecust' element={<><Navbar /><Usecust /></>} /> 
+        <Route path='/hoc' element={<><Navbar /><HoC /></>} /> 
       </Routes>
     </BrowserRouter>
   );
