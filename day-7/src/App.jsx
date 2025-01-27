@@ -23,6 +23,7 @@ import Memo from './components/functional_comp/Memorization/Memo'
 import Storage from './components/functional_comp/Hooks/Custom_Hook/Sample'
 import Usecust from './components/functional_comp/Hooks/Custom_Hook/UseLocalStorage'
 import HoC from './components/functional_comp/Hoc/HoC'
+import Dark from './components/functional_comp/Hooks/Custom_Hook/Darkmode'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path='/storage' element={<><Navbar /><Storage /></>} /> 
         <Route path='/usecust' element={<><Navbar /><Usecust /></>} /> 
         <Route path='/hoc' element={<><Navbar /><HoC /></>} /> 
+        <Route path='/darkmode' element={<><Navbar /><Dark /></>} /> 
       </Routes>
     </BrowserRouter>
   );
