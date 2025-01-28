@@ -1,67 +1,62 @@
-const express=require('express')
-const path=require('path')
-const mdb=require("mongoose")
-const dotenv=require("dotenv")
-const Signup=require("./models/signupSchema")
-const app=express()
+const express = require("express");
+const path = require("path");
+const mdb = require("mongoose");
+const dotenv = require("dotenv");
+const Signup = require("./models/signupSchema");
+const e = require("express");
+
+const app = express();
 dotenv.config();
-app.use(express.urlencoded());
-app.use(express.json())
-mdb.connect(process.env.MONGODB_URL).then(()=>{
-    console.log("connected successfully")
-}).catch((err)=>{
-    console.log("not connected")
-})
-app.get('/',(req,res)=>{
-    res.send("hi\n fellows");
-})
-app.get('/newPath',(req,res)=>{
-    res.sendFile(path.join(__dirname,"index.html"));
-})
-app.get('/newPath2',(req,res)=>{
-    res.json({"key":"index.html"});
-})
-app.post("/signup", (req,res)=>{
-    const {firstname,lastname,email,password}=req.body;
-    try{
-        const newCustomer=new Signup({
-        firstname:firstname,
-        lastname:lastname,
-        email:email,
-        password:password
+app.use(express.json());
+
+mdb
+  .connect(process.env.MONGODB_URL)
+  .then(() => {
+    console.log("MongoDB Connection Successful");
+  })
+  .catch((err) => {
+    console.log("MongoDB Connection Unsuccessful", err);
+  });
+
+app.get("/", (req, res) => {
+  res.send(
+    "Welcome to Backend my friend\nYour Roller coster starts from now on\nFasten your codebase so you can catchup of what is been taught"
+  );
+});
+app.get("/static", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.post("/signup", (req, res) => {
+  var { firstName, lastName, username, email, password } = req.body;
+  try {
+    const newSignup = new Signup({
+      firstName: firstName,
+      lastName: lastName,
+      username: username,
+      email: email,
+      password: password,
     });
-    newCustomer.save();
-    res.status(201).send("yooo!");
-    console.log("value recived")
-}catch(e){
-    res.status(401).send("yooo!")
-    console.log("unSuccessful")
-}
-})
-app.post("/login", async (req, res) => {
-    const { email, password } = req.body;
-    try {
-        const user = await Signup.findOne({ email });
-        if (!user) {
-            return res.status(404).json({ message: "User not found" });
-        }
-        const user_password=user.password;
-        if (password!=user_password) {
-            return res.status(401).json({ message: "Invalid password" });
-        }
-        
-        res.status(200).json({ message: "Login successful", user });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal server error" });
-    }
+    newSignup.save();
+    res.status(201).send("Signup Successful");
+  } catch (error) {
+    res.status(400).send("Signup Unsuccessful", error);
+  }
 });
-app.post("/update",async(req,res)=>{
-    const user=await Signup.findOneAndUpdate({firstname:"luffy"},{$set:{firstname:"Monkey D Luffy"}});
-    res.json("record updated");
-    user.save();
+app.get("/getsignupdet", async (req, res) => {
+  var signUpdet = await Signup.find();
+  res.status(200).json(signUpdet);
 });
-app.listen(3001,()=>{
-    console.log("server is started");
-    
-})
+app.post("/updatedet", async(req, res) => {
+  var updateRec = await Signup.findOneAndUpdate(
+    { username: "" },
+    { $set: { username: "" } }
+  );
+  console.log(updateRec);
+  updateRec.save()
+  res.json("Record Updated")
+});
+
+app.listen(3001, () => {
+  console.log("Server Started");
+});
