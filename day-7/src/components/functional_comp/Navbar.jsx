@@ -21,7 +21,7 @@ const Navbar = () => {
                     <li><Link to="/gallery" className='link'>Gallery</Link></li>
                     <li><Link to="/contact" className='link'>Contact</Link></li>
                     <li><Link to="/sign-up" className='link'>Sign-up</Link></li>
-                    
+
                     <div onMouseEnter={toggleDrop} onMouseLeave={toggleDrop} className='dropdown'>
                         <span>Hooks</span>
                         {dropdown && (
@@ -38,6 +38,7 @@ const Navbar = () => {
                                 <li><Link to="/memo" className='link'>Memo</Link></li>
                                 <li><Link to="/storage" className='link'>Storage</Link></li>
                                 <li><Link to="/usecust" className='link'>Cust-Hook</Link></li>
+                                <li><Link to="/darkmode" className='link'>Dark</Link></li>
                             </ul>)}
                     </div>
                 </ol>
