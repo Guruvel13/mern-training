@@ -26,9 +26,41 @@ import HoC from './components/functional_comp/Hoc/HoC'
 import Dark from './components/functional_comp/Hooks/Custom_Hook/Darkmode'
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogin = (email, password) => {
+    if (email && password) {
+      setIsLoggedIn(true);
+    }
+  };
   return (
     <BrowserRouter>
+      {isLoggedIn && <Navbar />} {/* Render Navbar only if logged in */}
+      {isLoggedIn && <Navbar setIsLoggedIn={setIsLoggedIn} />}
       <Routes>
+        <Route path="/" element={isLoggedIn ? <Home /> : <Login onLogin={handleLogin} />} />
+        <Route path="/about" element={isLoggedIn ? <About /> : <Login onLogin={handleLogin} />} />
+        <Route path="/gallery" element={isLoggedIn ? <Gallery page="Gallery" image="SECE Logo" /> : <Login onLogin={handleLogin} />} />
+        <Route path="/contact" element={isLoggedIn ? <Contact /> : <Login onLogin={handleLogin} />} />
+        <Route path="/reactlm" element={isLoggedIn ? <ReactLifecycleMethods /> : <Login onLogin={handleLogin} />} />
+        <Route path="/useApi" element={isLoggedIn ? <UseEffectAPI /> : <Login onLogin={handleLogin} />} />
+        <Route path="/signup" element={isLoggedIn ? <Home /> : <Signup />} />
+        <Route path="/login" element={isLoggedIn ? <Home /> : <Login onLogin={handleLogin} />} />
+        <Route path="/useState" element={isLoggedIn ? <UseState /> : <Login onLogin={handleLogin} />} />
+        <Route path="/useEffect" element={isLoggedIn ? <UseEffect /> : <Login onLogin={handleLogin} />} />
+        <Route path="/useimage" element={isLoggedIn ? <UseEffectAPIimage /> : <Login onLogin={handleLogin} />} />
+        <Route path="/usereducer" element={isLoggedIn ? <UseReducer /> : <Login onLogin={handleLogin} />} />
+        <Route path="/useref" element={isLoggedIn ? <UseRef /> : <Login onLogin={handleLogin} />} />
+        <Route path="/usememo" element={isLoggedIn ? <UseMemo /> : <Login onLogin={handleLogin} />} />
+        <Route path="/usecallback" element={isLoggedIn ? <UseCallback /> : <Login onLogin={handleLogin} />} />
+        <Route path="/reactlifecycle" element={isLoggedIn ? <ReactLifecycleMethods /> : <Login onLogin={handleLogin} />} />
+        <Route path="/usecontext" element={isLoggedIn ? <UseContext /> : <Login onLogin={handleLogin} />} />
+        <Route path="/memo" element={isLoggedIn ? <Memo /> : <Login onLogin={handleLogin} />} />
+        <Route path="/storage" element={isLoggedIn ? <Storage /> : <Login onLogin={handleLogin} />} />
+        <Route path="/usecust" element={isLoggedIn ? <Usecust /> : <Login onLogin={handleLogin} />} />
+        <Route path="/hoc" element={isLoggedIn ? <HoC /> : <Login onLogin={handleLogin} />} />
+        <Route path="/darkmode" element={isLoggedIn ? <Dark /> : <Login onLogin={handleLogin} />} />
+        
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/" element={<><Navbar /><Home /></>} />
