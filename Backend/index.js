@@ -127,4 +127,4 @@ app.delete("/deleteuser", async (req, res) => {
 });
 
 // Start Server
-app.listen(3001, () => console.log("🚀 Server Started on Port 3001"));
+app.listen(3001, () => console.log("Server Started on Port 3001"));
