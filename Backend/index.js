@@ -1,62 +1,61 @@
-const express = require("express");
-const path = require("path");
-const mdb = require("mongoose");
-const dotenv = require("dotenv");
-const Signup = require("./models/signupSchema");
-const e = require("express");
-
-const app = express();
+const path=require('path');
+const mdb=require('mongoose');
+const dotenv=require('dotenv');
+const Signup=('./models/signupSchema.js')
+const app=express();
 dotenv.config();
 app.use(express.json());
-
 mdb
   .connect(process.env.MONGODB_URL)
   .then(() => {
-    console.log("MongoDB Connection Successful");
+    console.log("conntected");
   })
-  .catch((err) => {
-    console.log("MongoDB Connection Unsuccessful", err);
+  .catch((e) => {
+    console.log("not conntected");
   });
-
-app.get("/", (req, res) => {
-  res.send(
-    "Welcome to Backend my friend\nYour Roller coster starts from now on\nFasten your codebase so you can catchup of what is been taught"
-  );
-});
 app.get("/static", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
-
+app.get("/", (req, res) => {
+  res.send("Welcome to backend my friend...\n this is backend process area");
+});
 app.post("/signup", (req, res) => {
-  var { firstName, lastName, username, email, password } = req.body;
+  var { firstname, lastname, email, password } = req.body;
+  console.log(req.body);
   try {
-    const newSignup = new Signup({
-      firstName: firstName,
-      lastName: lastName,
-      username: username,
+    const newCustomer = new Signup({
+      firstname: firstname,
+      lastname: lastname,
       email: email,
       password: password,
     });
-    newSignup.save();
-    res.status(201).send("Signup Successful");
+    newCustomer.save();
+    console.log(newCustomer);
+    res.status(201).send("signup is successfull");
   } catch (error) {
-    res.status(400).send("Signup Unsuccessful", error);
+    res.status(401).send("signup unsuccessful", error);
   }
 });
-app.get("/getsignupdet", async (req, res) => {
-  var signUpdet = await Signup.find();
-  res.status(200).json(signUpdet);
-});
-app.post("/updatedet", async(req, res) => {
-  var updateRec = await Signup.findOneAndUpdate(
-    { username: "" },
-    { $set: { username: "" } }
-  );
-  console.log(updateRec);
-  updateRec.save()
-  res.json("Record Updated")
-});
-
-app.listen(3001, () => {
-  console.log("Server Started");
-});
+app.get('/getssignupdet',async (req,res)=>{
+    var signUpdet=await Signup.find();
+    res.status(200).json(signUpdet);
+})
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+    try {
+      const user = await Signup.findOne({ email });
+      if (!user) {
+        return res.status(404).send("User not found!");
+      }
+      if (user.password !== password) {
+        return res.status(401).send("Invalid credentials!");
+      }
+      res.status(200).send("Login successful!");
+    } catch (error) {
+      console.error("Login error:", error);
+      res.status(500).send("Error during login");
+    }
+  });
+app.listen(3001,()=>{
+    console.log("My Server Started");
+}); 
